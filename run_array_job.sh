@@ -6,7 +6,7 @@
 #SBATCH --array=1-10
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=01:00:00
+#SBATCH --time=00:10:00
 #SBATCH --mem=1G
 
 set -e
