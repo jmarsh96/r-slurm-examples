@@ -9,8 +9,11 @@
 #SBATCH --time=01:00:00
 #SBATCH --mem=1G
 
-# Load the R module (if required by your HPC system)
-module load R
+set -e
 
-# Run the R script with the SLURM task ID
+module purge; module load bluebear
+
+module load bear-apps/2024a
+module load R/4.5.0-gfbf-2024a
+
 Rscript code/array_job.R

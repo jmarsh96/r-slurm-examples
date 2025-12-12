@@ -27,6 +27,7 @@ run_simulation <- function(N, p, savepath = NULL) {
 # Get the task ID from the SLURM environment variable
 slurm_task_id <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID", "1"))
 
+
 # Split the scenarios into chunks based on the task ID
 num_tasks <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_COUNT", "1"))
 chunk_size <- ceiling(nrow(scenarios) / num_tasks)
@@ -35,6 +36,13 @@ end_index <- min(slurm_task_id * chunk_size, nrow(scenarios))
 
 # Subset the scenarios for this task
 scenarios_subset <- scenarios[start_index:end_index, ]
+
+# Print the range of tasks being computed
+cat(
+    "SLURM Task ID:", slurm_task_id, 
+    "Computing tasks for scenarios from index", start_index, 
+    "to", end_index, "\n"
+)
 
 # Define the output directory
 output_dir <- file.path("results", "array_job")
