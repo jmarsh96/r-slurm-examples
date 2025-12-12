@@ -1,5 +1,5 @@
 library(parallel)
-library(parallely)
+library(parallelly)
 
 Ns <- seq(from = 10, to = 100, by = 10)
 ps <- seq(from = 0.1, to = 0.9, by = 0.1)
