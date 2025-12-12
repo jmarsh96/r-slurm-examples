@@ -32,7 +32,7 @@ results <- mclapply(
     function(i) {
         N <- scenarios$N[i]
         p <- scenarios$p[i]
-        run_simulation(i, N, p, output_dir)
+        run_simulation(N, p, output_dir)
     },
     mc.cores = availableCores() - 1
 )
