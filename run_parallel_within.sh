@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=parallel_within   # Job name
-#SBATCH --output=slurm_output/parallel_within_%j.out       # Standard output and error log
+#SBATCH --output=logs/parallel_within_%j.out       # Standard output and error log
 #SBATCH --nodes=1                       # Number of nodes
 #SBATCH --ntasks=1                      # Number of MPI tasks (and Julia workers)
 #SBATCH --cpus-per-task=2              # Number of CPU cores per task
